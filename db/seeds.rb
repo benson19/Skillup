@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-<<<<<<< HEAD
     30.times do User.create(
         name: Faker::Name.first_name,  
         money: Faker::Number.positive
@@ -41,6 +40,3 @@
         level: Faker::Number.between(from: 1, to: 10)
     )
     end
-=======
-
->>>>>>> carlos
