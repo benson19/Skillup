@@ -10,16 +10,12 @@ class UserSkillsController < ApplicationController
     end
 
     def new
-        @user_skill = UserSkill.new
     end
 
     def create 
         @user_skill = UserSkill.create(us_params)
         redirect_to user_skill_path(@user_skill)
     end
-
-    def edit
-
     end
 
     def update

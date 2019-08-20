@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
-    before_action :current_user, only: [:show, :edit, :update, :destroy]
+    before_action :current_user, only: [:index, :show, :edit, :update, :destroy]
 
+    def index
+        
+    end
+    
     def show
     end
 
@@ -30,13 +34,11 @@ class UsersController < ApplicationController
 
     private
 
-    def user_params
-        params.require(:user).permit(:name, :money)
-    end
-
     def current_user
         @user = User.find(params[:id])
     end
 
-
+    def user_params
+        params.require(:user).permit(:name, :money)
+    end
 end
