@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
     30.times do User.create(
-        name: Faker::Name.first_name,  
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        email: Faker::Internet.email,  
         money: Faker::Number.positive
         # password: Faker::Games::Zelda.character,
     )
