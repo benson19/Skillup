@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
     end
 
     def new
-
+        @project = Project.new
     end
 
     def edit
@@ -18,7 +18,8 @@ class ProjectsController < ApplicationController
     end
 
     def create
-
+        @project = Project.create(project_params)
+        redirect_to @project
     end
 
     def update
