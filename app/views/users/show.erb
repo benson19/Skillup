@@ -1,0 +1,26 @@
+<h1><%= "Hi, #{@user.name}!" %></h1>
+
+<% @user.user_skill.each do |us| %>
+    <%= us.skill_id.name %> 
+    <%= us.level %>
+<% end %>
+
+<%= link_to "Take on a new project!", @projects %>
+
+<% @user.user_project.each do |up| %>
+    <% if up.status < 100 %>
+        <%= up.name %>
+        <%= up.status %>
+        <%= up.pay %>
+    <% end %>
+<% end %>
+
+<% @user.user_project.each do |up| %>
+    <% if up.status == 100 %>
+        <%= up.name %>
+        <%= up.pay %>
+    <% end %>
+<% end %>
+
+
+
