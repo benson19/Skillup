@@ -1,0 +1,9 @@
+<h1>Available Projects</h1>
+
+<ul>
+    <% @projects.each do |project| %>
+        <li>
+            <%=" Project: #{project.name} Payout: #{project.pay} Required Skill: #{project.skill_id.name}"%>
+        </li>
+    <% end %>
+</ul>
