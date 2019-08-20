@@ -1,0 +1,21 @@
+
+<%= form_for @user do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+
+    <%= fields_for @user_skill do |usf| %>
+        <%= usf.label :skill %>
+        <%=  %>
+
+        <%= usf.label :level %>
+        <%=  %>
+    <% end %>
+
+    <%= f.submit %>
+
+<% end %>
+
