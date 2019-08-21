@@ -1,0 +1,22 @@
+<h2>Please Login to SkillUp</h2>
+
+<% if flash[:message] %>
+  <p><%= flash[:message] %></p>
+<% end %>
+
+<div class="d-flex" style="vertical-align: middle;padding-top: 5%;">
+  <div class="container border border-dark rounded">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= form_tag "/login" do %>
+            <div class="form-group">
+                    <%= label_tag :Email%>
+                    <%= email_field_tag :email, nil, {class: "form-control"} %>
+      </div>
+
+          <%= submit_tag "Login", class:"btn-btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

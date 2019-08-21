@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-    before_action :current_user, only: [:index, :show, :edit, :update, :destroy]
+    before_action :current_user, only: [:show, :edit, :update, :destroy]
 
     def index
-        
+        @users= User.all
     end
     
     def show
+        @user = User.find(params[:id])
     end
 
     def new
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
 
     def destroy
         @user.destroy
-        redirect_to users_path 
+        redirect_to new_users_path 
     end
 
 

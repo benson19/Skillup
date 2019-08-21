@@ -3,7 +3,8 @@
 <ul>
     <% @projects.each do |project| %>
         <li>
-            <%=" Project: #{project.name} Payout: #{project.pay} Required Skill: #{project.skill_id.name}"%>
+            <%=" Project: #{project.title} Payout: #{project.pay} Required Skill: #{project.skill_id} "%>
+            <%= button_to "Work on this project", new_user_project_path, :method => "get" %>
         </li>
     <% end %>
 </ul>
