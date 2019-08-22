@@ -1,7 +1,9 @@
 class UserProjectsController < ApplicationController
 
-    def index
-        @projects = Project.all
+
+
+    def index 
+        @user_project = UserProject.all 
     end
 
     def show
@@ -9,14 +11,14 @@ class UserProjectsController < ApplicationController
     end
 
     def new
+        @userproject = UserProject.new
+    end
 
+    def create 
+        
     end
 
     def edit
-
-    end
-
-    def create
 
     end
 

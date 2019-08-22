@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     end
     
     def show
+        @user = User.find(params[:id])
     end
 
     def new
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
 
     def destroy
         @user.destroy
-        redirect_to users_path 
+        redirect_to new_users_path 
     end
 
 

@@ -46,4 +46,6 @@ UserSkill.destroy_all
         skill_id: Skill.all.sample.id,
         level: Faker::Number.between(from: 1, to: 10)
     )
+
     end
+
