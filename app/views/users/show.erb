@@ -1,24 +1,24 @@
-<h1><%= "Hi, #{@user.full_name}!" %></h1>
+<h1> Hi, <%= @user.full_name %> </h1>
 
-<% @user.user_skill.each do |us| %>
-    <%= us.skill_id.name %> 
+<% @user.user_skills.each do |us| %>
+    <%= us.skill.name %> 
     <%= us.level %>
 <% end %>
 
-<%= link_to "Take on a new project!", @projects %>
+<%= link_to "Take on a new project!", projects_path %>
 
-<% @user.user_project.each do |up| %>
+<% @user.user_projects.each do |up| %>
     <% if up.status < 100 %>
-        <%= up.name %>
+        <%= up.project.title %>
         <%= up.status %>
-        <%= up.pay %>
+        <%= up.project.pay %>
     <% end %>
 <% end %>
 
-<% @user.user_project.each do |up| %>
+<% @user.user_projects.each do |up| %>
     <% if up.status == 100 %>
-        <%= up.name %>
-        <%= up.pay %>
+        <%= up.project.title %>
+        <%= up.project.pay %>
     <% end %>
 <% end %>
 
