@@ -1,18 +1,22 @@
 
-<%= form_for @user do |f| %>
+<ul>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+    <li> <%= error %> </li>
+<% end %>
+</ul>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<%= form_for(@user) do |f| %>
 
-    <%= fields_for @user_skill do |usf| %>
-        <%= usf.label :skill %>
-        <%=  %>
+    <%= f.label :full_name %>
+    <%= f.text_field :full_name %>
 
-        <%= usf.label :level %>
-        <%=  %>
-    <% end %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :level %>
+    <%= f.text_field :level %>
 
     <%= f.submit %>
-
 <% end %>
 
