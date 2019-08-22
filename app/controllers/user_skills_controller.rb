@@ -1,5 +1,5 @@
 class UserSkillsController < ApplicationController
-    before_action :current_us, only: [:show, :edit, :update]
+    before_action :current_us, only: [:show]
 
     def index 
         @user_skills = UserSkill.all
@@ -10,20 +10,15 @@ class UserSkillsController < ApplicationController
     end
 
     def new
+        @user_skill = UserSkill.new
     end
 
     def create 
         @user_skill = UserSkill.create(us_params)
-        redirect_to user_skill_path(@user_skill)
-    end
-    end
-
-    def update
-        @user_skill = UserSkill.update(dog_params)
-        redirect_to user_skill_path(@user_skill)
+        redirect_to @user_skill.user
     end
 
-    private
+  private
 
     def us_params
         params.require(:user_skill).permit(:user_id, :skill_id, :level)

@@ -1,11 +1,21 @@
-<h1> Hi, <%= @user.full_name %> </h1>
+
+<h1> Welcome Back, <%= "#{@user.full_name}"%></h1>
+
+
 
 <% @user.user_skills.each do |us| %>
-    <%= us.skill.name %> 
-    <%= us.level %>
+    <ul>
+        <li>
+            <%= us.skill.name %> 
+        <p>
+            <%= us.level %>
+        </p>
+    </ul>
 <% end %>
 
-<%= link_to "Take on a new project!", projects_path %>
+<p>
+<%= link_to "Take on a new project!", new_user_projects_path %>
+</p>
 
 <% @user.user_projects.each do |up| %>
     <% if up.status < 100 %>

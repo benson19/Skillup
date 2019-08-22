@@ -5,21 +5,26 @@
     <li> <%= error %> </li>
 <% end %>
 </ul>
+<<<<<<< HEAD
 
 <%= form_for @user do |f| %>
 
     <%= f.label :full_name %>
     <%= f.text_field :full_name %>
+=======
 
-    <%= fields_for @user_skill do |usf| %>
-        <%= usf.label :skill %>
-        <%=  %>
+<%= form_for(@user) do |f| %>
+>>>>>>> e13e6fcfe5708c6d8bd3d3aac65677f80052926a
 
-        <%= usf.label :level %>
-        <%=  %>
-    <% end %>
+    <%= f.label :full_name %>
+    <%= f.text_field :full_name %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :level %>
+    <%= f.text_field :level %>
 
     <%= f.submit %>
-
 <% end %>
 

@@ -1,12 +1,11 @@
 class SkillsController < ApplicationController
-    before_action :current_skill, only: [:show, :edit, :update]
+    before_action :current_skill, only: [:show]
 
     def index 
         @skills = Skill.all
     end
 
     def show
-
     end
 
     def new
@@ -18,9 +17,6 @@ class SkillsController < ApplicationController
         redirect_to skill_path(@skill)
     end
 
-    def edit
-       
-    end
 
     def update
         @skill = Skill.update(skill_params)

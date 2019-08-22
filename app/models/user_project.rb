@@ -3,6 +3,7 @@ class UserProject < ApplicationRecord
     belongs_to :user
 
     validates :user_id, :project_id, presence: true
+
     # validates :skill_match
 
 # def skill_match
@@ -10,6 +11,7 @@ class UserProject < ApplicationRecord
 #         self.errors.add(  )
 #     end
 # end
+
 
 
 
